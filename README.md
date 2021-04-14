@@ -1,4 +1,4 @@
-# Lenovo-P520-Hackintosh
+# Lenovo-ThinkStation-P520-Hackintosh
 
 ## 最新情况
 启动：`Opencore 6.8`
@@ -50,7 +50,7 @@
 <details>
 <summary>Catalina 10.15.6(19G2021) - 2021.01.14</summary>
 
-### Catalina 10.15.6
+### Catalina 10.15.6(19G2021)
 
 下载：[Download](https://github.com/Tamshen/Lenovo-ThinkStation-P520-Hackintosh/releases/tag/v1)
 
@@ -67,20 +67,23 @@
 
 ## 配置清单
 
-| 硬件     | 整机                                               |
-| -------- | -------------------------------------------------- |
+| 硬件     |                                                |
+| :-------- | :-------------------------------------------------- |
 | 主板     | 联想 1036 ( C422 芯片组)                           |
 | 处理器   | 英特尔 Xeon(至强) W-2150B @ 3.00GHz                |
 | 内存     | 三星 ECC REG 16 GB ( DDR4 2666MHz )  * 1           |
 | 硬盘1    | 西数 固态 SN750 500 GB                             |
 | 硬盘2    | 西数 蓝盘 4TB                                      |
-| 独立显卡  | Quadro K2000 2GB ( DDR5 )                          |
+| 显卡     | Quadro K2000 2GB ( DDR5 )                          |
 | 声卡1    | ALC662 ( 未注入[<sup>个人小结 6</sup>](#个人小结) )                                  |
 | 声卡2    | ALC235 ( 未注入[<sup>个人小结 6</sup>](#个人小结) )                                  |
 | 网卡     | 英特尔 Ethernet Connection  I219-LM / 联想         |
 | 网卡2    | [PCIe]BCM943224PCIEBT2BX（bigsur要打驱动[<sup>个人小结 5</sup>](#个人小结) ） |
-| 电源     | 台达 690W（电源安装设计有意思,类似PCIe插槽）                    |
-| 光驱     | 日立-LG DVD-RAM GHC0N DVD刻录机                    |
+| 电源     | 台达 690W（电源安装设计有意思，类似PCIe插槽，电源直接走主板）                    |
+| 光驱     | 日立-LG DVD-RAM GHC0N DVD刻录机（免驱？）                    |
+
+
+![dvd](images/dvd.png)        
 
 
 
