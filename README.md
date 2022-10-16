@@ -1,29 +1,95 @@
 # Lenovo-ThinkStation-P520-Hackintosh
 
-## 最新情况
+ThinkStation P520 黑苹果，本机器能对应苹果同期产品：
+
+*iMacPro1,1    Intel Xeon W-2140B CPU @ 3.20 GHz*
+
+- [x] 可以换成同款处理器 W2140B-2150B-2170B-2191B
+- [x] 能正确识别内存插槽 8条
+
+
+
+
+## 版本
+
+*如有问题(bug)请提交issue。（如果我能修就找个空闲时间修）*
+
+
+
+<details>
+<summary>Monterey 12.6(21G115) - 2022.10.16</summary>
+
+
+### 情况
+启动：`Opencore 0.7.8`
+
+系统：`Monterey 12.6`
+
+测试环境：**New Install-->** `Monterey 12.6`
+
+
+
+下载此版本：[Download](https://github.com/Tamshen/Lenovo-ThinkStation-P520-Hackintosh/releases/tag/12.6_21G115)
+
+
+
+
+#### 日志
+
+
+
+1.使用旧版本OC配置直接更新会遇到无法使用鼠标键盘的情况！解决方法是取消掉内核-XhciPortLimit的勾。[参考Link](https://blog.csdn.net/qq_27149279/article/details/116692896)
+
+2.因为我使用的是开普勒老显卡Quadro K2000，在蒙特雷新系统中驱动已经被干掉了，解决方法是使用：[Geforce Kepler patcher](https://github.com/chris1111/Geforce-Kepler-patcher)
+
+>1、配置禁用SIP
+>
+>Oc引导配置`NVRAM--->7C436110-AB2A-4BBB-A880-FE41995C9F82--->csr-active-config--->DataType:Data Value:EF0F0000`
+>
+>2、配置关闭OC引导安全启动
+>
+>SecureBootModel-->Disabled
+>
+>3、进入恢复分区进行快照关闭验证(两条)
+>
+>csrutil disable 
+>
+>csrutil authenticated-root disable 
+>
+>4、安装补丁和重启
+>
+>Geforce.Kepler.patcher-V5
+
+
+
+
+
+
+
+#### 问题
+
+1.系统没内置开普勒显卡驱动，需要自己打驱动。
+> 发现这样打的驱动没了显示器耳机音频输出。
+2.睡眠异常
+
+
+</details>
+
+
+
+
+
+<details>
+<summary>BigSur 11.2.2(20D80) - 2021.04.14</summary>
+
+### 情况
 启动：`Opencore 6.8`
 
 系统：`Big Sur 11.2.2`
 
 测试环境：`Catalina 10.15.6` **--OTA-->** `Big Sur 11.2.2`
 
-![bigsur](images/bigsur11.2.2screen.png)
-
-
-
-
-
-## 系统版本
-
-*如有问题(bug)请提交issue。（如果我能修就找个空闲时间修）*
-
-
-<details>
-<summary>Big Sur 11.2.2(20D80) - 2021.04.14</summary>
-
-### Big Sur 11.2.2(20D80)
-
-下载：[Download](https://github.com/Tamshen/Lenovo-ThinkStation-P520-Hackintosh/archive/refs/heads/main.zip)
+下载此版本：[Download](https://github.com/Tamshen/Lenovo-ThinkStation-P520-Hackintosh/archive/refs/tags/11.2.2_20D80.zip)
 
 #### 日志
 1. 首先感谢 Opencore 技术交流群的老哥 qq@3106142068（下面简称老哥），帮我解决了本次OAT升级的问题。
@@ -37,11 +103,10 @@
 9. USB解决方案，bak掉以前EFI的USB定制`USBPorts.kext`
 10. 取消了`-v`
 
-![v](images/opencore-v.png)
 
 #### 问题
 
-暂无，睡眠正常。
+睡眠异常
 
 
 </details>
@@ -52,7 +117,7 @@
 
 ### Catalina 10.15.6(19G2021)
 
-下载：[Download](https://github.com/Tamshen/Lenovo-ThinkStation-P520-Hackintosh/releases/tag/v1)
+下载：[Download](https://github.com/Tamshen/Lenovo-ThinkStation-P520-Hackintosh/archive/refs/tags/10.15.6-19G2021.zip)
 
 #### 日志
 - 此版本来自 [远景论坛 **pcbeta@jackliu79**](http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1857515) （**pcbeta@许峰** 去除了 **dsdt**）
@@ -78,12 +143,10 @@
 | 声卡1    | ALC662 ( 未注入[<sup>个人小结 6</sup>](#个人小结) )                                  |
 | 声卡2    | ALC235 ( 未注入[<sup>个人小结 6</sup>](#个人小结) )                                  |
 | 网卡     | 英特尔 Ethernet Connection  I219-LM / 联想         |
-| 网卡2    | [PCIe]BCM943224PCIEBT2BX（bigsur要打驱动[<sup>个人小结 5</sup>](#个人小结) ） |
+| 网卡2    | ~~[PCIe]BCM943224PCIEBT2BX（bigsur要打驱动[<sup>个人小结 5</sup>](#个人小结) ）~~ |
 | 电源     | 台达 690W（电源安装设计有意思，类似PCIe插槽，电源直接走主板）                    |
-| 光驱     | 日立-LG DVD-RAM GHC0N DVD刻录机（免驱？）                    |
+| 光驱     | 日立-LG DVD-RAM GHC0N DVD刻录机（走SATA 免驱）                    |
 
-
-![dvd](images/dvd.png)        
 
 
 
