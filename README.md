@@ -25,6 +25,8 @@ ThinkStation P520 黑苹果，本机器能对应苹果同期产品：
 
 系统：`Monterey 12.6`
 
+BIOS版本：`S03KT40P`
+
 测试环境：**New Install-->** `Monterey 12.6`
 
 
